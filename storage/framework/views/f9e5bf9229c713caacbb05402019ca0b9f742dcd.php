@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body class="bg-warning">
+	<br><br>
+  <div class="container-fluid">
+  	<?php if(session('message')): ?>
+  	    <p class="alert alert-success">
+  	    	<?php echo e(session('message')); ?>
+
+  	    </p>
+  	 <?php endif; ?>   
+  	<div class="container bg-light">
+  		<h3 class="text-dark text-center">
+  			Staff Registration
+  		</h3>
+  		<br>
+  		<form method="POST" action="<?php echo e(url('member/insert')); ?>" enctype="multipart/form-data">
+  			 <?php echo csrf_field(); ?>
+          <div class="form-row">
+                  <div class="form-group col-md-6">
+                  <label>Name</label>
+                  <input type="text" class="form-control"  placeholder="name" name="name">
+                   </div>
+                <div class="form-group col-md-6">
+                <label >Email</label>
+                <input type="text" class="form-control"  placeholder="Email" name="email">
+                </div>
+          </div>
+      <div class="form-group">
+      <label >Degination</label>
+      <select type="text" class="form-control"  placeholder="choose" name="post">
+      	<option>Select </option>
+      	<option value="admin">Admin</option>
+      	<option value="student">Student</option>
+      	<option value="staff">Staff</option>
+      	<option value="teacher">Teacher</option>
+
+      </select>
+      </div>
+
+       <div class="form-group">
+      <label >Phone</label>
+      <input type="number" class="form-control"  placeholder="phone " name="phone">
+      </div>
+
+     <div class="form-row">
+     <div class="form-group col-md-4">
+      <label>Gender : </label>
+      <input type="radio" id="male" value="male" name="gender"> Male
+      <input type="radio" id="female" value="female" name="gender"> Female
+      <input type="radio" id="other" value="other" name="gender"> Other
+
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Education : </label>
+      <!-- <input type="checkbox" name="education" value="12th" > 12th
+      <input type="checkbox" name="education" value="UG"> U.G
+      <input type="checkbox" name="education" value="PG"> P.G
+      <input type="checkbox" name="education"  value="PHD"> P.hd      -->
+      <input type="checkbox" id="12th" name="education" value="12th"> 12th
+      <input type="checkbox" id="UG" name="education" value="UG"> U.G   
+      <input type="checkbox" id="PG" name="education" value="PG"> P.G
+    
+    </div>
+
+      <div class="form-group col-md-4">
+      <label >Image</label>
+      <input type="file"  name="image">
+      </div>
+  </div>
+
+ 
+  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+  
+</form>
+<br><br>
+  	</div>
+  </div>
+</body>
+</html><?php /**PATH C:\Users\pratik verma\Desktop\laravel fresh\laravel_basic\resources\views/Member/index.blade.php ENDPATH**/ ?>

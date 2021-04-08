@@ -1,0 +1,1 @@
+<h1>Satwik verma</h1><?php /**PATH C:\Users\pratik verma\Desktop\laravel fresh\laravel_basic\resources\views/a.blade.php ENDPATH**/ ?>
